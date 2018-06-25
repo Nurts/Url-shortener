@@ -1,0 +1,26 @@
+<div class="container">
+    <h1>XYZ url-shortener</h1>
+
+    <div class="jumbotron">
+        <%= form_for(:link, url: create_path, remote: true) do |f|%>
+            <%= f.text_field :url, placeholder: "Enter url", class: "form-control"%>
+            <br>
+            <%= f.submit "Submit", class: "btn btn-info"%>
+        <% end %>
+    </div>
+
+    <table class="table">
+        <theader>
+            <tr>
+                <td>Original URL</td>
+                <td>Created at</td>
+                <td>Shortened URL</td>
+                <td>Clicks</id>
+            </tr>
+        </theader>
+        <tbody>
+            <%= render @links%>
+        </tbody>
+    </table>
+    <%= will_paginate @links, class: 'apple_pagination'%>
+</div>
